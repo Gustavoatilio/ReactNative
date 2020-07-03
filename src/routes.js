@@ -1,0 +1,27 @@
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import 'react-native-gesture-handler';
+
+import HomeScreen from './screens/HomeScreen';
+
+const AppStack = createStackNavigator();
+
+const Routes = () => {
+  return (
+    <NavigationContainer>
+      <AppStack.Navigator 
+        headerMode="none"
+        screenOptions={{
+          cardStyle: {
+            backgroundColor: '#F0F0F5'
+          }
+        }}
+      >
+        <AppStack.Screen name="Home" component={HomeScreen} />
+      </AppStack.Navigator>
+    </NavigationContainer>
+  );
+};
+
+export default Routes;
